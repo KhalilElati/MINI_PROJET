@@ -3,15 +3,17 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 const ProjectsList = () => {
   const [projects, setProjects] = useState([]);
-  useEffect(() => {
-    axios.get('/projects/list')
+  {
+    /*useEffect(() => {
+    axios.get('/projects')
       .then(response => { 
         setProjects(response.data);
       }
       )
       .catch(err => console.log(err));
   }, []);
-
+*/
+  }
   return (
     <> 
       <div className="container">

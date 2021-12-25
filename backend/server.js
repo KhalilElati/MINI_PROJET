@@ -9,6 +9,7 @@ mongoose.connect("mongodb+srv://khalil:khalil@cluster0.onzgm.mongodb.net/myTable
 
 //bodyParser == ay objet iji sous forme JSON 
 app.use(express.json())
+app.use(express.urlencoded({extended:true})) //to access info coming from forms
 
 const routeUrls = require('./signupbackend/routes/routes')
 //this connectes the routes with the server 
@@ -17,7 +18,6 @@ const routeUrls = require('./signupbackend/routes/routes')
 app.use(cors())
 app.use('/app',routeUrls)
 
-app.use(express.urlencoded({extended:true})) //to access info coming from forms
 const projectsRouter = require('./listsbackend/routes/projects')
 app.use('/projects',projectsRouter)  
 app.listen(4000, ()=> console.log('sever up and running ')); 
