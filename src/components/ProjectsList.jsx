@@ -4,15 +4,15 @@ import axios from 'axios'
 const ProjectsList = () => {
   const [projects, setProjects] = useState([]);
   {
-    /*useEffect(() => {
-    axios.get('/projects')
+    useEffect(() => {
+    axios.get('http://localhost:4000/projects')
       .then(response => { 
         setProjects(response.data);
       }
       )
       .catch(err => console.log(err));
   }, []);
-*/
+
   }
   return (
     <> 
@@ -23,22 +23,25 @@ const ProjectsList = () => {
         </Link>
         <div>
           {
-            /*
+            
             
             projects.length ?
               projects.map(project =>
-                <div key={project.id} className="card mt-4">
+                <div key={project._id} className="card mt-4">
                   <div className="card-body">
-                    <h4 className="card-title">{project.title}</h4>
+                    <h4 className="card-title">{project.projectName}</h4>
                     <div className="card-subtitle text-muted mb-2" >
-                      {project.deadline} 
+                      {project.projectDeadline} 
                     </div>
-                    <div className="card-text mb-2">{project.description} </div>
+                    <div className="card-text mb-2">{project.projectDescription} </div>
+                    <Link to={`/projects/${project._id}`} className="btn btn-primary">
+                     Show More
+                    </Link>
                   </div>
                 </div>
               ) :
               null
-              */
+              
           }
         </div>
       </div>

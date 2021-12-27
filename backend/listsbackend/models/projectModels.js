@@ -19,6 +19,6 @@ const projectSchema = new mongoose.Schema({
     },
     projectMembers:{
         type:String, 
-    },
+    }
 })
 module.exports=mongoose.model('projectsTable',projectSchema)
